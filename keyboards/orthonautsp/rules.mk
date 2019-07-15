@@ -44,7 +44,7 @@ OPT_DEFS += -DBOOTLOADER_SIZE=4096
 # Build Options
 #   comment out to disable the options.
 #
-BOOTLOADER = caterina   # Enable soft reset?
+BOOTLOADER = atmel-dfu   # Enable soft reset?
 BOOTMAGIC_ENABLE ?= yes	# Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE ?= yes	# Mouse keys(+4700)
 EXTRAKEY_ENABLE ?= yes	# Audio control and System control(+450)
