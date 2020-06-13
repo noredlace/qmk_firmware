@@ -22,38 +22,41 @@ enum crawl_keycodes {
   TEST,
   FUNCTION,
   MACRO_1,
-  MACRO_2
+  MACRO_2,
+  MACRO_PREV,
+  MACRO_PLAY,
+  MACRO_NEXT
 };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[_QWERTY] = KEYMAP(
+	[_QWERTY] = LAYOUT(
     VOICEMEETERA1, VOICEMEETERA2, VOICEMEETERAAUX, KC_F14, RAISE,
     KC_F15, KC_F16, KC_F17, KC_F18, LOWER, KC_ENT),
 
 //state for voice meeter volume adjust
-   	[_VOICEMEETERA1] = KEYMAP(
+   	[_VOICEMEETERA1] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT),
 
-    [_VOICEMEETERA2] = KEYMAP(
+    [_VOICEMEETERA2] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT),
 
-	[_VOICEMEETERAAUX] = KEYMAP(
+	[_VOICEMEETERAAUX] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT),
 
-	[_LOWER] = KEYMAP(
+	[_LOWER] = LAYOUT(
     KC_1, KC_2, KC_3, KC_4, KC_TRNS,
     KC_L, KC_TRNS, KC_0, KC_TRNS, KC_TRNS, KC_ENT),
 
-	[_RAISE] = KEYMAP(
-    KC_1, KC_2, KC_3, KC_4, KC_TRNS,
+	[_RAISE] = LAYOUT(
+    MACRO_PREV, MACRO_PLAY, MACRO_NEXT, KC_4, KC_TRNS,
     KC_R, LOWER, KC_BSPC, KC_TRNS, KC_TRNS, KC_ENT),
 
-	[_ADJUST] = KEYMAP(
+	[_ADJUST] = LAYOUT(
     KC_1, KC_2, KC_3, KC_4, KC_TRNS,
     KC_A, KC_TRNS, KC_BSPC, KC_TRNS, KC_TRNS, RESET)
 	
@@ -124,6 +127,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				layer_off(_VOICEMEETERAAUX);
 				//update_quad_layer(_LOWER, _RAISE, _FUNCTION, _ADJUST);
 				//update_tri_layer(_LOWER, _RAISE, _ADJUST);
+			}
+			return false;
+			break;
+		case MACRO_NEXT:
+			if (record->event.pressed){
+				SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)"3"SS_UP(X_LCTRL)SS_UP(X_LSHIFT));
+			}
+			return false;
+			break;
+		case MACRO_PLAY:
+			if (record->event.pressed){
+				SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)"2"SS_UP(X_LCTRL)SS_UP(X_LSHIFT));
+			}
+			return false;
+			break;
+
+		case MACRO_PREV:
+			if (record->event.pressed){
+				SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)"1"SS_UP(X_LCTRL)SS_UP(X_LSHIFT));
 			}
 			return false;
 			break;
