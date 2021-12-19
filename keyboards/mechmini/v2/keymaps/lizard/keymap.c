@@ -40,10 +40,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_PSCR, _______, _______, _______, _______, KC_SPC, KC_ENT, RAISE, KC_MNXT, KC_PGDN, KC_PGUP, KC_MPLY),
 
 	[_FUNCTION] = LAYOUT_ortho(
-  KC_TILD,  _______, _______, KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-  KC_DEL,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_4,    KC_5,    KC_6,    KC_RBRC, KC_PIPE,
-  KC_LSFT,  KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_1,    KC_2,    KC_3,    KC_LBRC, KC_RBRC,
-  _______, _______, _______, _______, _______, KC_SPC, KC_ENT, _______, KC_MNXT, KC_PGDN, KC_PGUP, KC_MPLY),
+  KC_F21,  KC_F23,  KC_F19,  _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+  KC_F22,  KC_F24,  KC_F20,  _______,   _______,   _______,   _______,   _______,    _______,    _______,    _______, _______,
+  KC_F15,  KC_F16,  _______, _______,   _______,  _______,  _______,  _______,    _______,    _______,    _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
 	[_ADJUST] = LAYOUT_ortho(
   _______, RESET,   DEBUG,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, KC_DEL ,
@@ -154,13 +154,13 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-	  
+
   /*
 	case MACRO_1:
 	  if (record->event.pressed) {
 		SEND_STRING("cd /mnt/c/Users/EJ/Documents");
 		register_code(KC_ENT);
-		return false; 
+		return false;
 	  }
 	case MACRO_2:
 	  if (record->event.pressed) {
@@ -168,17 +168,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		SEND_STRING("cd /mnt/c/Users/EJ/Documents/Github/qmk_lizard");
 		register_code(KC_ENT);
 		unregister_code(KC_ENT);
-		
+
 		//send command to compile
 		SEND_STRING("make planck:lizard");
 		register_code(KC_ENT);
 		unregister_code(KC_ENT);
-		
-		return false; 
+
+		return false;
 	  }
 	*/
-	  
-	  
+
+
     case QWERTY:
       if (record->event.pressed) {
         print("mode just switched to qwerty and this is a huge string\n");
@@ -216,7 +216,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-	  
+
 	case FUNCTION:
       if (record->event.pressed) {
         layer_on(_FUNCTION);
@@ -233,7 +233,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-	  
+
   }
   return true;
 }
