@@ -29,27 +29,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT_ortho(
   KC_ESC,    KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC,   KC_CIRC,  KC_AMPR,  KC_ASTR,   KC_LPRN,   KC_RPRN,  KC_BSPC,
-  KC_CTLTB,  KC_TRNS, KC_MINS, KC_EQL,  KC_LCBR,  KC_RCBR,   KC_LEFT,  KC_DOWN,  KC_UP,     KC_RIGHT,  KC_PIPE,  KC_GRV,
-  KC_LSFT,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,   KC_UNDS,  KC_PLUS,  KC_LBRC,   KC_RBRC,   KC_BSLS,  KC_TILD,
-  _______,   _______, _______, _______, LOWER,    KC_SPC,    KC_ENT,   _______,  KC_MNXT,   KC_AUDIO_VOL_DOWN,   KC_AUDIO_VOL_UP,  KC_MPLY),
+  KC_CTLTB,  KC_HOME, KC_MINS, KC_EQL,  KC_LCBR,  KC_RCBR,   KC_LEFT,  KC_DOWN,  KC_UP,     KC_RIGHT,  KC_PIPE,  KC_GRV,
+  KC_LSFT,   KC_END, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,   KC_UNDS,  KC_PLUS,  KC_LBRC,   KC_RBRC,   KC_BSLS,  KC_TILD,
+  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, LOWER,    KC_SPC,    KC_ENT,   KC_TRNS,  KC_MNXT,   KC_AUDIO_VOL_DOWN,   KC_AUDIO_VOL_UP,  KC_MPLY),
 
 [_LOWER] = LAYOUT_ortho(
   KC_ESC,   KC_1 ,   KC_2,    KC_3,   KC_4,   KC_5,   KC_6,   KC_7,  KC_8,   KC_9,    KC_0,     KC_BSPC,
   KC_CTLTB, KC_F1,   KC_F2,   KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_4,  KC_5,   KC_6,    KC_SCLN,  KC_QUOT,
   KC_LSFT,  KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_F11, KC_F12, KC_1,  KC_2,   KC_3,    KC_SLSH,  KC_RSFT,
-  KC_PSCR, _______, _______, _______, _______, KC_SPC, KC_ENT, RAISE, KC_MNXT, KC_PGDN, KC_PGUP, KC_MPLY),
+  KC_PSCR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SPC, KC_ENT, RAISE, KC_MNXT, KC_PGDN, KC_PGUP, KC_MPLY),
 
 [_FUNCTION] = LAYOUT_ortho(
-  KC_F21,  KC_F23,  KC_F19,  _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-  KC_F22,  KC_F24,  KC_F20,  _______,   _______,   _______,   _______,   _______,    _______,    _______,    _______, _______,
-  KC_F15,  KC_F16,  _______, _______,   _______,  _______,  _______,  _______,    _______,    _______,    _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+  KC_F21,  KC_F23,  KC_F19,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+  KC_F22,  KC_F24,  KC_F20,  KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS, KC_TRNS,
+  KC_F15,  KC_F16,  KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_F, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
 [_ADJUST] = LAYOUT_ortho(
-  _______, QK_BOOT,   _______,   _______, _______, _______, _______, _______, _______,_______, _______, KC_DEL ,
-  RGB_TOG, RGB_MOD, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______, _______,  _______,  _______,
-  KC_CAPS, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, KC_SPC, KC_ENT, _______, _______, _______, _______, _______),
+  KC_TRNS, QK_BOOT,   KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_DEL ,
+  RGB_TOG, RGB_HUI, RGB_SAI,  RGB_VAI,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,
+  RGB_MOD, RGB_HUD,  RGB_SAD,  RGB_VAD,   KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_A,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SPC, KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 };
@@ -60,6 +60,7 @@ void matrix_init_user(void) {
 void matrix_scan_user(void) {
 }
 
+/*
 void led_set_user(uint8_t usb_led) {
 
 	if (usb_led & (1 << USB_LED_NUM_LOCK)) {
@@ -92,7 +93,9 @@ void led_set_user(uint8_t usb_led) {
 
 	}
 
+
 }
+*/
 
 enum function_id {
     SHIFT_ESC,
